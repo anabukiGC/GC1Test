@@ -3,7 +3,10 @@
 Title::Title():Base(eType_Scene),
 m_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 64)
 {
+	
 	m_img = COPY_RESOURCE("Title",CImage);
+	m_text = COPY_RESOURCE("Title1", CImage);
+	m_pushz = COPY_RESOURCE("pushz", CImage);
 }
 
 Title::~Title()
@@ -23,7 +26,14 @@ void Title::Update()
 void Title::Draw()
 {
 	m_img.Draw();
+
+	m_text.Draw();
+	m_text.SetPos(100,110);
+
+	m_pushz.Draw();
+	m_pushz.SetPos(600, 110);
+
 	//•¶Žš•\Ž¦
-	m_title_text.Draw(64, 256, 0, 0, 0, "Title");
-	m_title_text.Draw(64, 512, 0, 0, 0, "Push Z");
+	//m_title_text.Draw(64, 256, 0, 0, 0, "title");
+	//m_title_text.Draw(64, 512, 0, 0, 0, "Push Z");
 }
